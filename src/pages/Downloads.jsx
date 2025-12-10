@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import OSDetectedBox from "../components/downloads/OSDetectedBox";
 import Button from "../components/ui/Button";
 import windowsIcon from "../assets/icons/windows.svg";
@@ -5,11 +6,17 @@ import macIcon from "../assets/icons/mac.svg";
 import linuxIcon from "../assets/icons/linux.png";
 
 export default function Downloads() {
+  const [releaseData, setReleaseData] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  // Your GitHub repository info
+  const GITHUB_REPO = "Iamjustrosh/Major-Project";
+  
   const downloads = [
     {
       os: "Windows",
       file: "CollabBoard-Setup.exe",
-      size: "94 MB",
+      size: "130 MB",
       icon: windowsIcon,
     },
     {
@@ -32,6 +39,36 @@ export default function Downloads() {
     },
   ];
 
+  useEffect(() => {
+    // Fetch latest release data from GitHub
+    fetch(`https://api.github.com/repos/${GITHUB_REPO}/releases/latest`)
+      .then(res => res.json())
+      .then(data => {
+        setReleaseData(data);
+        setLoading(false);
+      })
+      .catch(err => {
+        console.error("Error fetching release data:", err);
+        setLoading(false);
+      });
+  }, []);
+
+  const getDownloadUrl = (filename) => {
+    if (!releaseData || !releaseData.assets) {
+      // Fallback to a default release URL structure
+      return `https://github.com/${GITHUB_REPO}/releases/latest/download/${filename}`;
+    }
+    
+    // Find the matching asset from the release
+    const asset = releaseData.assets.find(a => a.name === filename);
+    return asset ? asset.browser_download_url : `https://github.com/${GITHUB_REPO}/releases/latest/download/${filename}`;
+  };
+
+  const handleDownload = (filename) => {
+    const url = getDownloadUrl(filename);
+    window.open(url, '_blank');
+  };
+
   return (
     <div className="pt-20 pb-20 px-6 max-w-6xl mx-auto">
       {/* -------------------- Hero Section -------------------- */}
@@ -41,10 +78,15 @@ export default function Downloads() {
           Fast, secure, real-time collaborative whiteboard.  
           Available for Windows, macOS, and Linux.
         </p>
+        {releaseData && (
+          <p className="text-sm text-gray-500 mt-2">
+            Latest version: {releaseData.tag_name} • Released {new Date(releaseData.published_at).toLocaleDateString()}
+          </p>
+        )}
       </section>
 
       {/* -------------------- OS Detection -------------------- */}
-      <OSDetectedBox />
+      <OSDetectedBox downloads={downloads} onDownload={handleDownload} />
 
       {/* -------------------- All Downloads Grid -------------------- */}
       <section className="mt-20">
@@ -67,12 +109,11 @@ export default function Downloads() {
               </div>
 
               <Button
-                className=" "
-                onClick={() =>
-                  (window.location.href = `/downloads/${item.file}`)
-                }
+                className=""
+                onClick={() => handleDownload(item.file)}
+                disabled={loading}
               >
-                Download
+                {loading ? "Loading..." : "Download"}
               </Button>
             </div>
           ))}
@@ -83,8 +124,9 @@ export default function Downloads() {
       <section className="mt-20 text-center">
         <p className="text-gray-600 mb-2">Looking for previous versions?</p>
         <a
-          href="https://github.com/YOUR_REPO/releases"
+          href={`https://github.com/${GITHUB_REPO}/releases`}
           target="_blank"
+          rel="noopener noreferrer"
           className="text-blue-600 font-medium underline"
         >
           View Release Notes →
