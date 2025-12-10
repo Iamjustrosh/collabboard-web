@@ -15,7 +15,7 @@ export default function Downloads() {
   const downloads = [
     {
       os: "Windows",
-      file: "CollabBoard-Setup.exe",
+      file: "Collaborative.Whiteboard-win32-x64-1.0.0.zip",
       size: "130 MB",
       icon: windowsIcon,
     },
@@ -38,6 +38,7 @@ export default function Downloads() {
       icon: linuxIcon,
     },
   ];
+  // https://github.com/Iamjustrosh/Major-Project/releases/download/v1.0.0/Collaborative.Whiteboard-win32-x64-1.0.0.zip
 
   useEffect(() => {
     // Fetch latest release data from GitHub
@@ -86,7 +87,7 @@ export default function Downloads() {
       </section>
 
       {/* -------------------- OS Detection -------------------- */}
-      <OSDetectedBox downloads={downloads} onDownload={handleDownload} />
+      {/* <OSDetectedBox downloads={downloads} onDownload={handleDownload} /> */}
 
       {/* -------------------- All Downloads Grid -------------------- */}
       <section className="mt-20">
