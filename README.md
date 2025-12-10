@@ -1,16 +1,137 @@
-# React + Vite
+#🌐 Project Website
+==================
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Official website for the **CollabBoard - Realtime Collaborative Whiteboard & Code Editor** project.This website provides:
 
-Currently, two official plugins are available:
+*   🏠 **Home** – Overview and introduction
+    
+*   📦 **Downloads** – Links to install the app
+    
+*   📖 **Docs** – Documentation for setup & usage
+    
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+#🚀 Features
+-----------
 
-## React Compiler
+### 🏠 Home
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+*   Project introduction
+    
+*   Core features overview
+    
+*   Clean and modern UI
+    
 
-## Expanding the ESLint configuration
+### 📦 Downloads
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+*   Download links for Windows / macOS / Linux (or web)
+    
+*   Version details
+    
+*   Installation instructions
+    
+
+### 📖 Documentation
+
+*   Guides for using the whiteboard
+    
+*   Code workspace documentation
+    
+*   How to create/join rooms
+    
+*   Troubleshooting & FAQ
+    
+
+#🛠️ Tech Stack
+--------------
+
+The website is built with:
+
+*   **React + Vite**
+    
+*   **TailwindCSS**
+    
+*   **React Router**
+    
+*   **Responsive components**
+    
+*   **Lightweight, fast-loading design**
+    
+
+#📁 Folder Structure
+-------------------
+
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   website/   ├─ src/   │   ├─ pages/   │   │   ├─ Home.jsx   │   │   ├─ Downloads.jsx   │   │   └─ Docs.jsx   │   ├─ components/   │   ├─ App.jsx   │   └─ main.jsx   ├─ public/   ├─ index.html   └─ package.json   `
+
+#⚙️ Installation & Development
+-----------------------------
+
+### 1️⃣ Clone the repository
+
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   git clone [https://github.com/Iamjustrosh/collabboard-web](https://github.com/Iamjustrosh/collabboard-web/)  cd [collabboard-web](https://github.com/Iamjustrosh/collabboard-web/)   `
+
+### 2️⃣ Install dependencies
+
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   bun install   `
+
+### 3️⃣ Start the development server
+
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   bun run dev   `
+
+#🌍 Deployment
+-------------
+
+This website can be deployed on:
+
+*   **Vercel (recommended)**
+    
+*   Netlify
+    
+*   GitHub Pages
+    
+*   Cloudflare Pages
+    
+
+Simply upload the dist/ folder after building.
+
+#🧩 Pages Overview
+-----------------
+
+### **Home**
+
+*   Simple hero section
+    
+*   Project introduction
+    
+*   Buttons to Docs or Downloads
+    
+
+### **Downloads**
+
+*   App download links
+    
+*   Version logs
+    
+*   Setup instructions
+    
+
+### **Docs**
+
+*   Step-by-step usage guide
+    
+*   Realtime collaboration instructions
+    
+*   Code editor help
+    
+*   API / environment requirements
+    
+
+#📄 License
+----------
+
+This project website is released under the **MIT License**.
+
+#🤝 Contributing
+---------------
+
+Contributions, improvements, and new documentation pages are welcome.
