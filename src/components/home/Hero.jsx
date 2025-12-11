@@ -1,5 +1,6 @@
 import Button from "../ui/Button";
 import { Link } from "react-router-dom";
+import previewImg from "../../assets/hero-preview.png"; // Ensure this image exists
 
 export default function Hero() {
   return (
@@ -24,10 +25,16 @@ export default function Hero() {
         </Link>
       </div>
 
-      {/* placeholder for future screenshot/illustration */}
-      <div className="mt-16">
-        <div className="w-full max-w-4xl mx-auto h-80 bg-gray-100 border rounded-xl">
-          <p className="pt-32 text-gray-400">App Preview Placeholder</p>
+      {/* Responsive screenshot preview, fits container */}
+      <div className="mt-16 p-4">
+        <div className="w-full max-w-4xl mx-auto bg-gray-100 border rounded-xl overflow-hidden flex items-center justify-center">
+          <img
+            src={previewImg}
+            alt="CollabBoard App Preview"
+            className="w-full h-full object-cover"
+            style={{ objectPosition: "center" }}
+            draggable={false}
+          />
         </div>
       </div>
     </section>

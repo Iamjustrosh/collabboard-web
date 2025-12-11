@@ -15,8 +15,8 @@ export default function Features() {
     },
     {
       icon: <FaBolt size={24} />,
-      title: "Offline Mode",
-      text: "Continue working even without internet — sync later."
+      title: "Code Editor",
+      text: "Run your code within the app."
     }
   ];
 
