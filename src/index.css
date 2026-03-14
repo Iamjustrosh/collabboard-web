@@ -1,1 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap');
 @import "tailwindcss";
+
+:root {
+  /* ── Light mode ── */
+  --cb-bg:               #f8f8fc;
+  --cb-bg-muted:         #ffffff;
+  --cb-surface:          #ffffff;
+  --cb-surface-elevated: #ffffff;
+  --cb-border-subtle:    #e4e4f0;
+  --cb-border-strong:    #c8c8dc;
+
+  --cb-text:             #0f0f18;
+  --cb-text-soft:        #5c5c7a;
+  --cb-text-muted:       #9292aa;
+
+  --cb-accent:           #5b5bd6;       /* indigo */
+  --cb-accent-soft:      rgba(91, 91, 214, 0.10);
+  --cb-accent-strong:    #4040b8;
+  --cb-accent-rgb:       91, 91, 214;
+
+  --cb-emerald:          #10b981;
+  --cb-sky:              #0ea5e9;
+  --cb-violet:           #8b5cf6;
+
+  --cb-hero-glow:        rgba(91, 91, 214, 0.18);
+
+  /* Navbar */
+  --cb-nav-bg:           rgba(255, 255, 255, 0.88);
+  --cb-nav-border:       #e4e4f0;
+  --cb-nav-shadow:       0 1px 0 0 #e4e4f0, 0 4px 16px rgba(15,15,24,0.06);
+}
+
+html.dark {
+  /* ── Dark mode ── */
+  --cb-bg:               #080810;
+  --cb-bg-muted:         #0c0c18;
+  --cb-surface:          #10101e;
+  --cb-surface-elevated: #16162a;
+  --cb-border-subtle:    rgba(255, 255, 255, 0.08);
+  --cb-border-strong:    rgba(255, 255, 255, 0.14);
+
+  --cb-text:             #f0f0fc;
+  --cb-text-soft:        #9494b8;
+  --cb-text-muted:       #5c5c7a;
+
+  --cb-accent:           #7c7ce8;
+  --cb-accent-soft:      rgba(124, 124, 232, 0.18);
+  --cb-accent-strong:    #a8a8f8;
+  --cb-accent-rgb:       124, 124, 232;
+
+  --cb-emerald:          #34d399;
+  --cb-sky:              #38bdf8;
+  --cb-violet:           #a78bfa;
+
+  --cb-hero-glow:        rgba(124, 124, 232, 0.28);
+
+  /* Navbar */
+  --cb-nav-bg:           rgba(8, 8, 16, 0.90);
+  --cb-nav-border:       rgba(255, 255, 255, 0.07);
+  --cb-nav-shadow:       0 1px 0 0 rgba(255,255,255,0.06), 0 4px 24px rgba(0,0,0,0.4);
+}
+
+/* ── Base ── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: 'Geist', system-ui, -apple-system, sans-serif;
+  background-color: var(--cb-bg);
+  color: var(--cb-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Light body mesh */
+body::before {
+  content: '';
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(91, 91, 214, 0.12), transparent),
+    radial-gradient(ellipse 60% 40% at 80% 80%, rgba(139, 92, 246, 0.07), transparent);
+}
+
+html.dark body::before {
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(124, 124, 232, 0.20), transparent),
+    radial-gradient(ellipse 60% 40% at 80% 90%, rgba(139, 92, 246, 0.12), transparent);
+}
+
+/* ── Typography ── */
+h1, h2, h3, h4, h5 { letter-spacing: -0.02em; }
+code, pre { font-family: 'Geist Mono', monospace; }
+
+/* ── Custom Scrollbar ── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: var(--cb-border-strong);
+  border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--cb-accent); }
+
+/* ── Cursor override (hide default when custom cursor is mounted) ── */
+body.custom-cursor-active * { cursor: none !important; }
+
+/* ── Focus ring ── */
+:focus-visible {
+  outline: 2px solid var(--cb-accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ── Selection ── */
+::selection {
+  background: var(--cb-accent-soft);
+  color: var(--cb-accent-strong);
+}
+
+/* ── Utility: glassmorphism panel ── */
+.glass {
+  background: var(--cb-surface-elevated);
+  backdrop-filter: blur(16px) saturate(1.4);
+  -webkit-backdrop-filter: blur(16px) saturate(1.4);
+  border: 1px solid var(--cb-border-subtle);
+}
+
+/* ── Utility: gradient text ── */
+.gradient-text {
+  background: linear-gradient(135deg, var(--cb-accent) 0%, #a78bfa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}

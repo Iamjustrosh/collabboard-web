@@ -13,6 +13,8 @@
     "@mdx-js/mdx": "^3.1.1",
     "@mdx-js/react": "^3.1.1",
     "@tailwindcss/vite": "^4.1.17",
+    "framer-motion": "^11.14.1",
+    "gsap": "^3.12.7",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-icons": "^5.5.0",
