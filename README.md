@@ -1,137 +1,128 @@
-#🌐 Project Website
-==================
+# 🌐 CollabBoard Website
 
-Official website for the **CollabBoard - Realtime Collaborative Whiteboard & Code Editor** project.This website provides:
+Welcome to the official website for **CollabBoard – Realtime Collaborative Whiteboard & Code Editor**!
 
-*   🏠 **Home** – Overview and introduction
-    
-*   📦 **Downloads** – Links to install the app
-    
-*   📖 **Docs** – Documentation for setup & usage
-    
+This site provides:
 
-#🚀 Features
------------
+- 🏠 **Home** – Overview and introduction  
+- 📦 **Downloads** – Get the latest apps  
+- 📖 **Docs** – Setup & usage guides  
+
+---
+
+## 🚀 Features
 
 ### 🏠 Home
-
-*   Project introduction
-    
-*   Core features overview
-    
-*   Clean and modern UI
-    
+- Introduction to the project and core features
+- Clean, modern, and responsive UI
 
 ### 📦 Downloads
-
-*   Download links for Windows / macOS / Linux (or web)
-    
-*   Version details
-    
-*   Installation instructions
-    
+- Download links for Windows, macOS, and Linux
+- Version information & release notes
+- Easy installation instructions
 
 ### 📖 Documentation
+- User guides and walkthroughs for whiteboard features
+- Code editor documentation
+- Room management (create/join)
+- Troubleshooting & FAQ
 
-*   Guides for using the whiteboard
-    
-*   Code workspace documentation
-    
-*   How to create/join rooms
-    
-*   Troubleshooting & FAQ
-    
+---
 
-#🛠️ Tech Stack
---------------
+## 🛠️ Tech Stack
 
-The website is built with:
+Built using:
 
-*   **React + Vite**
-    
-*   **TailwindCSS**
-    
-*   **React Router**
-    
-*   **Responsive components**
-    
-*   **Lightweight, fast-loading design**
-    
+- **React** & **Vite**
+- **TailwindCSS**
+- **React Router**
+- Modular, responsive components
+- Fast-loading, lightweight design
 
-#📁 Folder Structure
--------------------
+---
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   website/   ├─ src/   │   ├─ pages/   │   │   ├─ Home.jsx   │   │   ├─ Downloads.jsx   │   │   └─ Docs.jsx   │   ├─ components/   │   ├─ App.jsx   │   └─ main.jsx   ├─ public/   ├─ index.html   └─ package.json   `
+## 📁 Folder Structure
 
-#⚙️ Installation & Development
------------------------------
+<pre>
+website/
+  ├─ src/
+  │   ├─ pages/
+  │   │   ├─ Home.jsx
+  │   │   ├─ Downloads.jsx
+  │   │   └─ Docs.jsx
+  │   ├─ components/
+  │   ├─ App.jsx
+  │   └─ main.jsx
+  ├─ public/
+  ├─ index.html
+  └─ package.json
+</pre>
 
-### 1️⃣ Clone the repository
+---
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   git clone [https://github.com/Iamjustrosh/collabboard-web](https://github.com/Iamjustrosh/collabboard-web/)  cd [collabboard-web](https://github.com/Iamjustrosh/collabboard-web/)   `
+## ⚙️ Installation & Development
 
-### 2️⃣ Install dependencies
+1. **Clone the repository**
+    ```bash
+    git clone https://github.com/Iamjustrosh/collabboard-web
+    cd collabboard-web
+    ```
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   bun install   `
+2. **Install dependencies**  
+   (requires [Bun](https://bun.sh/) – for npm, replace `bun` with `npm` or `yarn`)
+    ```bash
+    bun install
+    ```
 
-### 3️⃣ Start the development server
+3. **Start the development server**
+    ```bash
+    bun run dev
+    ```
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   bun run dev   `
+---
 
-#🌍 Deployment
--------------
+## 🌍 Deployment
 
-This website can be deployed on:
+You can deploy this site on:
 
-*   **Vercel (recommended)**
-    
-*   Netlify
-    
-*   GitHub Pages
-    
-*   Cloudflare Pages
-    
+- **Vercel** *(recommended)*
+- Netlify
+- GitHub Pages
+- Cloudflare Pages
 
-Simply upload the dist/ folder after building.
+Build with  
+```bash
+bun run build
+```  
+and upload the `dist/` folder.
 
-#🧩 Pages Overview
------------------
+---
+
+## 🧩 Pages Overview
 
 ### **Home**
-
-*   Simple hero section
-    
-*   Project introduction
-    
-*   Buttons to Docs or Downloads
-    
+- Hero section with project intro
+- Quick nav to Docs and Downloads
 
 ### **Downloads**
-
-*   App download links
-    
-*   Version logs
-    
-*   Setup instructions
-    
+- Latest app downloads for all OS
+- Installation instructions & release archive
 
 ### **Docs**
+- Whiteboard usage and collaboration guides
+- Code editor tips
+- API/environment info
 
-*   Step-by-step usage guide
-    
-*   Realtime collaboration instructions
-    
-*   Code editor help
-    
-*   API / environment requirements
-    
+---
 
-#📄 License
-----------
+## 📄 License
 
-This project website is released under the **MIT License**.
+Released under the **MIT License**.
 
-#🤝 Contributing
----------------
+---
 
-Contributions, improvements, and new documentation pages are welcome.
+## 🤝 Contributing
+
+We welcome contributions, bugfixes, and new docs! Feel free to open issues or submit pull requests.
+
+---
