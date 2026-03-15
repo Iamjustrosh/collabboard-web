@@ -216,6 +216,37 @@ export default function Downloads() {
         </div>
       </section>
 
+      {/* 7-Zip info callout */}
+      <section className="mt-8">
+        <div
+          className="flex items-start gap-4 rounded-2xl px-6 py-5"
+          style={{
+            background: "var(--cb-accent-soft)",
+            border:     "1px solid var(--cb-border-subtle)",
+          }}
+        >
+          <div
+            className="mt-0.5 h-8 w-8 shrink-0 rounded-lg flex items-center justify-center text-sm"
+            style={{ background: "var(--cb-accent)", color: "#fff" }}
+          >
+            📦
+          </div>
+          <div>
+            <p className="text-sm font-semibold mb-0.5" style={{ color: "var(--cb-text)" }}>
+              Why 7-Zip?
+            </p>
+            <p className="text-sm leading-relaxed" style={{ color: "var(--cb-text-soft)" }}>
+              Some release assets are distributed as <code className="px-1 py-0.5 rounded text-xs" style={{ background: "var(--cb-surface)", color: "var(--cb-accent)" }}>.7z</code> archives for a smaller download size.
+              7-Zip is free, open-source, and available for Windows, macOS, and Linux.
+              Visit <a href="https://www.7-zip.org/download.html" target="_blank" rel="noopener noreferrer"
+                style={{ color: "var(--cb-accent)", textDecoration: "underline", textUnderlineOffset: "3px" }}>
+                7-zip.org/download.html
+              </a> to get it.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Release notes link */}
       <section className="mt-16 text-center">
         <div
