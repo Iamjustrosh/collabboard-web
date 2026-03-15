@@ -14,30 +14,28 @@ const downloads = [
     icon: windowsIcon,
     desc: "Windows 10 / 11 · x64",
     accent: "#0078d4",
+    available: true,
   },
   {
     os:   "macOS (Intel)",
-    file: "CollabBoard-Intel.dmg",
-    size: "120 MB",
     icon: macIcon,
     desc: "macOS 12+ · Intel x64",
     accent: "#555",
+    available: false,
   },
   {
     os:   "macOS (Apple Silicon)",
-    file: "CollabBoard-ARM.dmg",
-    size: "118 MB",
     icon: macIcon,
     desc: "macOS 12+ · M1/M2/M3",
     accent: "#555",
+    available: false,
   },
   {
     os:   "Linux",
-    file: "CollabBoard.AppImage",
-    size: "135 MB",
     icon: linuxIcon,
     desc: "Ubuntu 20.04+ · AppImage",
     accent: "#f97316",
+    available: false,
   },
 ];
 
@@ -150,50 +148,69 @@ export default function Downloads() {
                     {item.os}
                   </p>
                   <p className="text-xs mt-0.5" style={{ color: "var(--cb-text-muted)" }}>
-                    {item.desc} · {item.size}
+                    {item.desc}{item.size ? ` · ${item.size}` : ""}
                   </p>
                 </div>
               </div>
 
-              <button
-                onClick={() => handleDownload(item.file)}
-                disabled={loading}
-                className="inline-flex items-center gap-1.5 rounded-xl px-4 py-2.5 text-sm font-semibold transition-all duration-200 disabled:opacity-50"
-                style={{
-                  background:  "var(--cb-accent)",
-                  color:       "#fff",
-                  boxShadow:   "0 2px 8px rgba(var(--cb-accent-rgb), 0.3)",
-                  minWidth:    "110px",
-                  justifyContent: "center",
-                }}
-                onMouseEnter={e => {
-                  if (!loading) {
-                    e.currentTarget.style.background = "var(--cb-accent-strong)";
-                    e.currentTarget.style.transform = "scale(1.03)";
-                  }
-                }}
-                onMouseLeave={e => {
-                  e.currentTarget.style.background = "var(--cb-accent)";
-                  e.currentTarget.style.transform = "scale(1)";
-                }}
-              >
-                {loading ? (
-                  <span className="inline-flex items-center gap-1.5">
-                    <svg className="animate-spin" width="12" height="12" viewBox="0 0 12 12" fill="none">
-                      <circle cx="6" cy="6" r="5" stroke="rgba(255,255,255,0.3)" strokeWidth="1.5"/>
-                      <path d="M6 1a5 5 0 0 1 5 5" stroke="#fff" strokeWidth="1.5" strokeLinecap="round"/>
-                    </svg>
-                    Loading
-                  </span>
-                ) : (
-                  <>
-                    <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round">
-                      <path d="M6.5 1.5v7M4 6l2.5 2.5L9 6M2 10.5h9"/>
-                    </svg>
-                    Download
-                  </>
-                )}
-              </button>
+              {item.available ? (
+                <button
+                  onClick={() => handleDownload(item.file)}
+                  disabled={loading}
+                  className="inline-flex items-center gap-1.5 rounded-xl px-4 py-2.5 text-sm font-semibold transition-all duration-200 disabled:opacity-50"
+                  style={{
+                    background:  "var(--cb-accent)",
+                    color:       "#fff",
+                    boxShadow:   "0 2px 8px rgba(var(--cb-accent-rgb), 0.3)",
+                    minWidth:    "110px",
+                    justifyContent: "center",
+                  }}
+                  onMouseEnter={e => {
+                    if (!loading) {
+                      e.currentTarget.style.background = "var(--cb-accent-strong)";
+                      e.currentTarget.style.transform = "scale(1.03)";
+                    }
+                  }}
+                  onMouseLeave={e => {
+                    e.currentTarget.style.background = "var(--cb-accent)";
+                    e.currentTarget.style.transform = "scale(1)";
+                  }}
+                >
+                  {loading ? (
+                    <span className="inline-flex items-center gap-1.5">
+                      <svg className="animate-spin" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                        <circle cx="6" cy="6" r="5" stroke="rgba(255,255,255,0.3)" strokeWidth="1.5"/>
+                        <path d="M6 1a5 5 0 0 1 5 5" stroke="#fff" strokeWidth="1.5" strokeLinecap="round"/>
+                      </svg>
+                      Loading
+                    </span>
+                  ) : (
+                    <>
+                      <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round">
+                        <path d="M6.5 1.5v7M4 6l2.5 2.5L9 6M2 10.5h9"/>
+                      </svg>
+                      Download
+                    </>
+                  )}
+                </button>
+              ) : (
+                <button
+                  disabled
+                  className="inline-flex items-center gap-1.5 rounded-xl px-4 py-2.5 text-sm font-semibold opacity-70 cursor-not-allowed"
+                  style={{
+                    background:  "var(--cb-accent-soft)",
+                    color:       "var(--cb-text-muted)",
+                    minWidth:    "110px",
+                    justifyContent: "center",
+                  }}
+                >
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <line x1="8" y1="12" x2="16" y2="12" />
+                  </svg>
+                  Uploading soon
+                </button>
+              )}
             </motion.div>
           ))}
         </div>
