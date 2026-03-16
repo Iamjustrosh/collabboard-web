@@ -9,7 +9,7 @@ const GITHUB_REPO = "Iamjustrosh/Major-Project";
 const downloads = [
   {
     os:   "Windows",
-    file: "Collaborative.Whiteboard.V2-win32-x64-1.0.0.zip",
+    file: "Collaborative.Whiteboard.V2-win32-x64-2.0.0.zip",
     size: "130 MB",
     icon: windowsIcon,
     desc: "Windows 10 / 11 · x64",
