@@ -306,7 +306,7 @@ export default function Hero() {
           transition={{ duration: 0.4, ease: "easeOut" }}
         >
           <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-          Live collaborative canvas for product teams, students &amp; creators
+          Developed by The Team Roshan, Nikita and Happy 
         </motion.span>
 
         {/* Headline */}
